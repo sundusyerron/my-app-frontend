@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Route, Routes} from 'react-router-dom'
+import Home from './components/home/Home'
+import Memes from './components/memes/Meme'
+import AddMeme from "./components/addmeme/AddMeme";
+import UpdateMemes from "./components/memes/UpdateMemes";
+import UpdatedMeme from "./components/updatedmemes/UpdatedMeme";
+import Signup from "./components/signup/Signup";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Routes>
+          <Route exact path="/" element={<Home/>}>
+          </Route>
+          <Route exact path="/memes" element={<Memes/>}>
+          </Route>
+          <Route exact path="/add" element={<AddMeme/>}></Route>
+          <Route exact path="/update" element={<UpdateMemes/>}></Route>
+          <Route exact path="/updated" element={<UpdatedMeme />}></Route>
+          <Route exact path="/signup" element={<Signup />}></Route>
+        </Routes>
     </div>
   );
 }

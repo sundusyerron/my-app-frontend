@@ -1,0 +1,15 @@
+.container {
+    margin-top: 50px;
+}
+
+.skip {
+    background-color: #ff00;
+}
+
+.generate {
+    background-color: gray;
+}
+
+.memes {
+    background-color: orange;
+}

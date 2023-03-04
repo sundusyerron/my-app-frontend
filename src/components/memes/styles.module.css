@@ -1,0 +1,17 @@
+.container {
+    margin-top: 50px;
+}
+
+.skip {
+    background-color:blue;
+}
+
+.generate {
+    background-color: #0275d8;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Shadows Into Light', cursive;
+}
