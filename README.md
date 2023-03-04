@@ -1,6 +1,7 @@
+# my-app-frontend
 ## Discription
 
-Meme-Lord  is an application that allows users to view ,  add, delete or do away with their fevorite memes with pictures and its captions just for fun.
+meme-generator app is an application that allows users to view ,  add, delete or do away with their fevorite memes with pictures and its captions just for fun.
 ## Built with
 This application was built with the following technologies: 
 
@@ -8,13 +9,7 @@ This application was built with the following technologies:
 * HTML
 * CSS
 * Tailwind 
-  
 
-## Running The Live Hosted Application
-
-* open this [link](https://your-meme-lord.netlify.app/) on your browser to access the live web application
-* you can also follow the link on the right side of the repository below the discription
-* on the browser you will need to search in by typing in order to filder transaction by description and add new transaction on the form below
 
 ## usage
 
@@ -51,18 +46,15 @@ Open a terminal / command line interface on your computer
 
 * Clone the repo by using the following to create a copy on your local machine:
 
- `` git clone https://github.com/malcomowilla/meme-lord``
+ `` git clone 
 * Change directory to the repo folder:
 
- `` cd /mnt/d..``
+ `` cd my-app-frontend``
  
 *  Open it in Visual Studio Code
 
   ``code .``
-
-## Usage
-
-In the project directory, you can run:
+# Running Application
 
 ### `npm start`
 
@@ -85,7 +77,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
 
 ### `npm run eject`
 
@@ -107,26 +99,6 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 * on the browser, enter log-in details and click log-in button
 
 
-## Contributing
 
-Please refer to each project's style and contribution guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
 
-[Fork](https://github.com/malcomowilla/meme-lord) the repo on GitHub and 
 
-clone   ``git clone https://github.com/malcomowilla/meme-lord `` 
-
-to set the project to your own machine
-* Commit changes to your own branch
-* Push your work back up to your fork
-* Submit a Pull request so that we can review your changes
-NOTE: Be sure to merge the latest from "upstream" before making a pull request!
-
-## Issues
-
-Feel free to submit issues and enhancement requests.
-
-Please use specific bugs and errors.
-
-## License
-
-[IST](https://opensource.org/licenses/ISC
