@@ -129,12 +129,4 @@ Please use specific bugs and errors.
 
 ## License
 
-[IST](https://opensource.org/licenses/ISC)
-
-
-## Author
-
-[Alex Tanui, Khalid Ahackmed, Samueelx , malcomowilla](https://github.com/malcomowilla/meme-lord)
-
-
-Happy coding😎 
+[IST](https://opensource.org/licenses/ISC
