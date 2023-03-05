@@ -7,7 +7,7 @@ import { MemeGenerated } from '../MemeGenerated/MemeGenerated';
 export const App = () => {
   return (
     <div>
-      <h1>my-app-frontend</h1>
+      <h1>MEME GENERATOR APP</h1>
       <Switch>
         <Route exact path='/'>
           <Meme />
