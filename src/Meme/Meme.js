@@ -32,7 +32,7 @@ export const Meme = () => {
     formData.append('template_id', currentMeme.id);
     captions.forEach((c, index) => formData.append(`boxes[${index}][text]`, c));
 
-    fetch('https://api.imgflip.com/caption_image', {
+    fetch(`http://localhost:9292/users/${userId}/memes` {
       method: 'POST',
       body: formData
     }).then(res => {
