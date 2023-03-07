@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
-import background from '../../img/background.jpg';
+import background from '../../img/meme-background.jpg';
 import Header from "../home/Header";
 
 function Memes() {
