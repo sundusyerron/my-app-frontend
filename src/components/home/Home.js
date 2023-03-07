@@ -1,4 +1,4 @@
-import background from '../../img/background.jpg';
+import background from '../../img/meme-background.jpg';
 import React from "react";
 import Header from './Header'
 // import styles from '../memes/styles.module.css'
@@ -12,7 +12,7 @@ function Home(){
      
       
       <div style={{ backgroundImage: `url(${background})`}} className="h-screen bg-cover bg-center md:bg-cover md:bg-center sm:bg-cover sm:bg-center flex flex-col justify-center items-center font-sans">
-        <h2 className='text-6xl font-medium hover:font-extrabold tracking-widest text-center uppercase leading-loose m-4'>MEME GENERATOR APP</h2>
+        <h2 className='text-6xl font-medium hover:font-extrabold tracking-widest text-center uppercase leading-loose m-4'>Meme Generator</h2>
         <p className='text-lg leading-loose m-2'>
           <span class="material-icons md-light">face</span>
            <span class="material-icons md-48">face</span>

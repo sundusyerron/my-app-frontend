@@ -1,84 +1,83 @@
-import React, { useEffect, useState } from 'react';
-import styles from './styles.module.css';
-import { useHistory } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import styles from "./styles.module.css";
+import background from '../../img/background.jpg';
+import Header from "../home/Header";
 
-export const Meme = () => {
+function Memes() {
+    const [memes, setMemes] = useState([]);
+    const [memeIndex, setMemeIndex] = useState(0);
+    const [upvotes, setUpvotes] = useState(0);
+    const [downvotes, setDownvotes] = useState(0);
 
-  const [memes, setMemes] = useState([]);
-  const [memeIndex, setMemeIndex] = useState(0);
-  const [captions, setCaptions] = useState([]);
+    //useEffect hook will make a network request  on component render,when the fetch resolves,it will set the response from the server
+    //to the local state using the setState function,in turn causing the component to render so as to update the ui with the data
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then((res) => {
+                return res.json();
+            })
+            .then((res) => {
+                const memes = res.data.memes;
+                const shuffleMemes = Math.floor(Math.random() * memes.length);
 
-  const history = useHistory();
+                setMemes(memes[shuffleMemes]);
 
-  const updateCaption = (e, index) => {
-    const text = e.target.value || '';
-    setCaptions(
-      captions.map((c, i) => {
-        if(index === i) {
-          return text;
-        } else {
-          return c;
-        }
-      })
+                setMemes(memes);
+            });
+    }, []);
+
+    const handleDownvotes = () => {
+        setDownvotes(() => downvotes + 1);
+    }
+
+    const handleUpvotes = () => {
+        setUpvotes(() => upvotes + 1);
+    }
+
+    return memes.length ? (
+
+        <>
+        <Header/>
+        <div id="votememe" style={{ backgroundImage: `url(${background})` }} className="h-screen bg-cover bg-center md:bg-cover md:bg-center sm:bg-cover sm:bg-center flex flex-col justify-center items-center font-sans" className={styles.container}>
+
+            <h2 className="text-2xl font-semibold tracking-wider text-center text-orange-800 m-2 p-4">Browse Memes</h2>
+
+            <div className="flex space-x-2 justify-center">
+                <button
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    onClick={() => setMemeIndex(Math.floor(Math.random() * 100) + 1)}
+                    className="inline-block px-6 py-2.5 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
+                    skip{" "}
+                </button>
+            </div>
+
+            <img src={memes[memeIndex].url} alt="random meme" />
+
+            <div className="flex space-x-2 justify-center">
+                <button
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    onClick={handleUpvotes}
+                    className="inline-block px-2 py-2.5 my-4 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
+                    &#x2B06;	UPVOTES: {upvotes}
+                </button>
+
+                <button
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    onClick={handleDownvotes}
+                    className="inline-block px-2 py-2.5 my-4 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orage-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
+                    &#x2B07;    DOWNVOTES: {downvotes}
+                </button>
+            </div>
+        </div></>
+    ) : (
+        <></>
     );
-  };
+}
 
-  const generateMeme = () => {
-    const currentMeme = memes[memeIndex];
-    const formData = new FormData();
-
-    formData.append('username', 'portexe');
-    formData.append('password', 'abc123');
-    formData.append('template_id', currentMeme.id);
-    captions.forEach((c, index) => formData.append(`boxes[${index}][text]`, c));
-
-    fetch(`https://backend-vrff.onrender.com)` {
-      method: 'POST',
-      body: formData
-    }).then(res => {
-      res.json().then(res => {
-        history.push(`/generated?url=${res.data.url}`);
-      });
-    });
-  };
-
-  const shuffleMemes = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * i);
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-  };
-
-  useEffect(() => {
-    fetch(https://backend-vrff.onrender.com').then(res => {
-      res.json().then(res => {
-        const _memes = res.data.memes;
-        shuffleMemes(_memes);
-        setMemes(_memes);
-      });
-    });
-  }, []);
-
-  useEffect(() => {
-    if(memes.length) {
-      setCaptions(Array(memes[memeIndex].box_count).fill(''));
-    }
-  }, [memeIndex, memes]);
-
-  return(
-    memes.length ? 
-    <div className={styles.container}>
-      <button onClick={generateMeme} className={styles.generate}>Generate</button>
-      <button onClick={() => setMemeIndex(memeIndex + 1)} className={styles.skip}>Skip</button>
-      {
-        captions.map((c, index) => (
-          <input onChange={(e) => updateCaption(e, index)} key={index} />
-        ))
-      }
-      <img alt='meme' src={memes[memeIndex].url} />
-    </div> : 
-    <></>
-  );
-};
+export default Memes;

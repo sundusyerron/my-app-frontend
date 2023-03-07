@@ -12,7 +12,7 @@ function Memes() {
     //useEffect hook will make a network request  on component render,when the fetch resolves,it will set the response from the server
     //to the local state using the setState function,in turn causing the component to render so as to update the ui with the data
     useEffect(() => {
-        fetch("https://api.ihttps://backend-vrff.onrender.commgflip.com/get_memes")
+        fetch("https://api.imgflip.com/get_memes")
             .then((res) => {
                 return res.json();
             })
