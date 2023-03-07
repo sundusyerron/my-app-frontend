@@ -14,7 +14,7 @@ React - JavaScript library for building user interfaces
 This is how the application looks like 
 `landing page `
 
-<img src="./src/img/landing page.png"  width="200" height="150"/>
+
 
 `add-meme page`
 * To add your own meme chose a picture of the meme its id and caption as rewuired plus the cartegory

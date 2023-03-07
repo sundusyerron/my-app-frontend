@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import background from '../../img/meme-background.jpg';
@@ -43,7 +44,7 @@ function Memes() {
             <h2 className="text-2xl font-semibold tracking-wider text-center text-orange-800 m-2 p-4">Browse Memes</h2>
 
             <div className="flex space-x-2 justify-center">
-                <button
+                <button>
                     type="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
