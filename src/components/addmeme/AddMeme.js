@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../home/Header';
-import background from '../../img/background.jpg';
+import background from '../../img/meme-background.jpg';
 
 function AddMeme() {
   const [category, setCategory] = useState('');

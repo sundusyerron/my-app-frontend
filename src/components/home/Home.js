@@ -22,7 +22,7 @@ function Home(){
         
         <hr />
         <p className='text-lg leading-loose m-2'>
-          Use our application 
+          Use this application 
           to even make your own memes.
         </p>
       </div>

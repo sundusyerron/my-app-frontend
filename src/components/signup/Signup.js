@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import bg from '../../img/background.jpg';
+import bg from '../../img/meme-background.jpg';
 
 function Register() {
     const [fname, setFirstname] = useState("");
