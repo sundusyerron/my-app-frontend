@@ -32,7 +32,7 @@ export const Meme = () => {
     formData.append('template_id', currentMeme.id);
     captions.forEach((c, index) => formData.append(`boxes[${index}][text]`, c));
 
-    fetch(`http://localhost:9292/users/${userId}/memes` {
+    fetch(`https://backend-vrff.onrender.com)` {
       method: 'POST',
       body: formData
     }).then(res => {
@@ -52,7 +52,7 @@ export const Meme = () => {
   };
 
   useEffect(() => {
-    fetch('https://api.imgflip.com/get_memes').then(res => {
+    fetch(https://backend-vrff.onrender.com').then(res => {
       res.json().then(res => {
         const _memes = res.data.memes;
         shuffleMemes(_memes);

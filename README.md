@@ -7,7 +7,6 @@ meme-generator app is an application that allows users to view ,  add, delete or
 React - JavaScript library for building user interfaces
 
 
-
 ## usage
 
 * The landing page starts with an opening informaation where where the user clicks on the skip buttton to view the meme or move to `add meme` route to add their own meme. Users can also generate their meme through the generate route.
